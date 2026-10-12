@@ -73,7 +73,7 @@ An enterprise-style RAG assistant over 26 lectures of flash notes. Every request
 | 3 | Flash attention | ✅ | TTFT ↓ on long prompts | — |
 | 4 | Speculative decoding (small same-family draft model) | ✅ | TPOT ↓ at low concurrency | Acceptance rate |
 
-> **Done 2026-10-04 (out of order, first):** on this M4 Max + llama.cpp b11146 it made RAG answers *slower* (1B draft k=3: 0.59×; n-gram: 1.00×), with answer quality unchanged. Cause: the 8B's multi-token check costs 1.4–6× a normal step here. Details in README "Speculative decoding results".
+> **Done 2026-10-04 (out of order, first):** on this M4 Max + llama.cpp b11146 it made RAG answers *slower* (1B draft k=3: 0.59×; n-gram: 1.00×), with answer quality unchanged. Cause: the 8B's multi-token check costs 1.4 to 6× a normal step here. Details in `results/RESULTS.md` and `analysis/speculative-decoding.md`.
 | 5 | Weight quantization (Q8 → Q4) | ❌ | TPOT ↓, memory ↓ | Quality score |
 | 6 | KV-cache quantization (q8_0) | ❌ | Memory ↓, max users ↑ | Quality score |
 
