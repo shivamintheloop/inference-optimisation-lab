@@ -1,4 +1,4 @@
-# Inference Optimization Lab (lite)
+# Inference Optimization Lab
 
 I built a small RAG assistant on a laptop, over my own AI-engineering lecture notes and three arXiv papers. I added one layer at a time and measured each one. Then I tried to make the LLM part faster with speculative decoding, on two engines and four model formats.
 
