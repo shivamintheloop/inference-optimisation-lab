@@ -1,0 +1,28 @@
+{"id": "q01", "style": "keyword", "question": "What is Reciprocal Rank Fusion (RRF)?", "expected": ["notes/23-design-a-rag-system-part-2-flash.md"]}
+{"id": "q02", "style": "keyword", "question": "How does an HNSW index work?", "expected": ["notes/23-design-a-rag-system-part-2-flash.md", "notes/22-design-a-rag-system-part-1-flash.md"]}
+{"id": "q03", "style": "paraphrase", "question": "Why is producing the answer word by word slower than reading the prompt?", "expected": ["notes/18-numbers-every-ai-engineer-should-know-flash.md", "notes/19-design-chatgpt-training-to-serving-flash.md"]}
+{"id": "q04", "style": "keyword", "question": "How many bytes per parameter does an INT4 model use compared to FP32?", "expected": ["notes/18-numbers-every-ai-engineer-should-know-flash.md"]}
+{"id": "q05", "style": "keyword", "question": "What is PagedAttention and what problem does it solve?", "expected": ["docs/pagedattention-vllm.pdf", "notes/18-numbers-every-ai-engineer-should-know-flash.md", "notes/19-design-chatgpt-training-to-serving-flash.md"]}
+{"id": "q06", "style": "paraphrase", "question": "How did the original Transformer paper get rid of recurrent networks?", "expected": ["docs/attention-is-all-you-need.pdf", "notes/11-llm-from-scratch-part-3-flash.md"]}
+{"id": "q07", "style": "keyword", "question": "What goes into a task card that the lead agent writes for each sub-agent?", "expected": ["notes/30-design-a-deep-research-agent-flash.md"]}
+{"id": "q08", "style": "keyword", "question": "Why use SSE instead of WebSocket to stream research progress?", "expected": ["notes/30-design-a-deep-research-agent-flash.md"]}
+{"id": "q09", "style": "keyword", "question": "What is the Jev model and who built it?", "expected": ["notes/30-design-a-deep-research-agent-flash.md"]}
+{"id": "q10", "style": "paraphrase", "question": "When a file is edited, how do we stop old versions of its text from showing up in search?", "expected": ["notes/22-design-a-rag-system-part-1-flash.md", "notes/23-design-a-rag-system-part-2-flash.md"]}
+{"id": "q11", "style": "keyword", "question": "What is the difference between session memory and persistent memory?", "expected": ["notes/25-design-memory-for-a-personal-ai-assistant-part-1-flash.md"]}
+{"id": "q12", "style": "keyword", "question": "How does Byte Pair Encoding build a vocabulary?", "expected": ["notes/12-llm-from-scratch-part-4-flash.md"]}
+{"id": "q13", "style": "paraphrase", "question": "What happens to the model's word choices when you turn the randomness setting up?", "expected": ["notes/12-llm-from-scratch-part-4-flash.md", "notes/10-llm-from-scratch-part-2-flash.md", "notes/06-machine-learning-overview-flash.md", "notes/01-ai-engineering-overview-part-1-flash.md"]}
+{"id": "q14", "style": "keyword", "question": "Why is causal masking needed in self-attention?", "expected": ["notes/11-llm-from-scratch-part-3-flash.md", "notes/10-llm-from-scratch-part-2-flash.md", "notes/09-llm-from-scratch-part-1-flash.md"]}
+{"id": "q15", "style": "keyword", "question": "What is LoRA and why is it cheaper than full fine-tuning?", "expected": ["notes/13-llm-from-scratch-part-5-flash.md", "notes/02-ai-engineering-overview-part-2-flash.md"]}
+{"id": "q16", "style": "keyword", "question": "What is grouped query attention in the Llama architecture?", "expected": ["notes/13-llm-from-scratch-part-5-flash.md"]}
+{"id": "q17", "style": "paraphrase", "question": "How can an agent keep running experiments on its own and only keep the changes that improve a metric?", "expected": ["notes/29-loop-engineering-and-graph-engineering-flash.md"]}
+{"id": "q18", "style": "paraphrase", "question": "How does a helper agent avoid filling up the main agent's context window?", "expected": ["notes/16-ai-coding-agent-from-scratch-part-3-flash.md", "notes/17-ai-coding-agent-from-scratch-part-4-flash.md"]}
+{"id": "q19", "style": "keyword", "question": "What is the lost in the middle problem?", "expected": ["notes/15-ai-coding-agent-from-scratch-part-2-flash.md", "notes/23-design-a-rag-system-part-2-flash.md"]}
+{"id": "q20", "style": "paraphrase", "question": "Which paper combined a trained document retriever with a sequence-to-sequence generator for knowledge-heavy questions?", "expected": ["docs/rag-lewis-2020.pdf"]}
+{"id": "q21", "style": "keyword", "question": "What does the learning rate control in gradient descent?", "expected": ["notes/07-model-training-and-optimization-part-1-flash.md", "notes/08-model-training-and-optimization-part-2-flash.md"]}
+{"id": "q22", "style": "paraphrase", "question": "Why can't a normal chatbot answer questions about my company's internal files?", "expected": ["notes/22-design-a-rag-system-part-1-flash.md"]}
+{"id": "q23", "style": "paraphrase", "question": "How many GPUs do we need to serve a ChatGPT-like product at peak traffic?", "expected": ["notes/19-design-chatgpt-training-to-serving-flash.md"]}
+{"id": "q24", "style": "keyword", "question": "What is a KV cache in LLM inference?", "expected": ["notes/18-numbers-every-ai-engineer-should-know-flash.md", "notes/19-design-chatgpt-training-to-serving-flash.md", "docs/pagedattention-vllm.pdf", "notes/09-llm-from-scratch-part-1-flash.md", "notes/10-llm-from-scratch-part-2-flash.md"]}
+{"id": "u01", "style": "unanswerable", "question": "What is our company's parental leave policy?", "expected": []}
+{"id": "u02", "style": "unanswerable", "question": "Who won the 2022 football World Cup?", "expected": []}
+{"id": "u03", "style": "unanswerable", "question": "How do I make a sourdough starter at home?", "expected": []}
+{"id": "u04", "style": "unanswerable", "question": "What is the best way to learn to play the guitar?", "expected": []}

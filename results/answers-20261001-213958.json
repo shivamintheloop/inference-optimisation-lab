@@ -1,0 +1,675 @@
+{
+  "time": "2026-10-01T21:39:58",
+  "config_hash": "9999f4c0",
+  "questions_hash": "8fdcb037",
+  "summary": {
+    "n_answerable": 24,
+    "n_unanswerable": 4,
+    "refused_right": 4,
+    "refused_wrong": 1,
+    "cited": 0.958,
+    "cites_expected": 0.875,
+    "invalid_citations": 0,
+    "cut_off": 0,
+    "llm_calls": 24,
+    "ttft_p50_ms": 1782.8,
+    "ttft_p95_ms": 2311.8,
+    "tpot_p50_ms": 14.2,
+    "prompt_tokens_p50": 1087,
+    "output_tokens_p50": 121,
+    "e2e_p50_ms": 3433.0,
+    "e2e_p95_ms": 6282.1
+  },
+  "per_question": [
+    {
+      "id": "q01",
+      "style": "keyword",
+      "answer": "Reciprocal Rank Fusion (RRF) is a technique to combine results from multiple retrieval systems by comparing ranks rather than scores. It rewards consistency and penalizes documents that are excellent in only one list.\n\nThe RRF score formula is `RRF(d) = \u03a3 over lists 1/(60 + rank_l(d))`, where `rank_l(d)` is the rank of document `d` in list `l`. The constant `60` dampens the effect of very high ranks. \n\nA lower rank number gives a larger contribution to the score, as it sits in the denominator. For example, rank 1 contributes \u2248 0.0164, while rank 7 contributes \u2248 0.0149.\n\n[S1]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/23-design-a-rag-system-part-2-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3359.4,
+      "ttft_ms": 1540.5,
+      "tpot_ms": 11.83,
+      "output_tokens": 149,
+      "prompt_tokens": 1242,
+      "load_ms": 55.19,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q02",
+      "style": "keyword",
+      "answer": "An HNSW (Hierarchical Navigable Small World) index clusters the vector space ahead of time, creating a graph that allows for efficient search. When a query is made, it navigates to the right neighborhood first, then compares only within it, reducing the number of vectors to compare from 1 million to around 10,000 [S1]. The HNSW index trades small accuracy loss for faster search times, achieving results in 1-10 ms compared to exact KNN over 1M vectors which takes hundreds of milliseconds [S2].\n\nThe HNSW graph is a multi-layer proximity graph, where Layer 0 holds all vectors with short-range edges and higher layers hold exponentially fewer nodes with long-range \"motorway\" edges [S2]. The index stores extra graph-navigation structure on top of the raw vectors, multiplying size by ~1.5-2\u00d7 [S3].\n\nThe HNSW index is tuned using parameters such as `m` (bidirectional connections per node), `ef_construction` (candidate pool size during index build), and `ef` (candidate pool size at query time) which determine how aggressively the hierarchy compresses the search space [S4].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/22-design-a-rag-system-part-1-flash.md",
+        "notes/23-design-a-rag-system-part-2-flash.md",
+        "notes/22-design-a-rag-system-part-1-flash.md",
+        "notes/23-design-a-rag-system-part-2-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 4837.5,
+      "ttft_ms": 1561.7,
+      "tpot_ms": 13.01,
+      "output_tokens": 246,
+      "prompt_tokens": 1203,
+      "load_ms": 55.94,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q03",
+      "style": "paraphrase",
+      "answer": "The reason for this slowness lies in the decoding process. According to [S6], during decode, the model generates one new token at a time without re-processing the entire prompt, which is much cheaper per step than prefill. However, because prefill must digest all N prompt tokens before emitting one output token, a longer prompt raises Time to First Token (TTFT) specifically.\n\nIn other words, [S6] states that \"Because prefill must digest all N prompt tokens before emitting one output token, a longer prompt raises TTFT specifically.\" This implies that the decoding process is slower because it generates each token individually, whereas prefill processes all tokens in parallel.",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        6
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/18-numbers-every-ai-engineer-should-know-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3505.5,
+      "ttft_ms": 1652.0,
+      "tpot_ms": 12.71,
+      "output_tokens": 138,
+      "prompt_tokens": 1063,
+      "load_ms": 56.28,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q04",
+      "style": "keyword",
+      "answer": "An INT4 model uses 0.5 bytes per parameter, which is half of the 1 byte used by an FP32 model [S3]. This means that an INT4 model has a smaller footprint than an FP32 model.\n\nTo compare, here are the bytes per parameter for each:\n\n* FP32: 4 bytes/param\n* INT4: 0.5 bytes/param\n\nThis is because INT4 uses only half as many bits to store numbers compared to FP32 [S3].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        3
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/18-numbers-every-ai-engineer-should-know-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3040.4,
+      "ttft_ms": 1666.2,
+      "tpot_ms": 12.36,
+      "output_tokens": 105,
+      "prompt_tokens": 1188,
+      "load_ms": 60.72,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q05",
+      "style": "keyword",
+      "answer": "I couldn't find this in your notes.",
+      "not_found": false,
+      "llm_refused": true,
+      "cited": [],
+      "invalid": [],
+      "cited_docs": [],
+      "cites_expected": false,
+      "ms": 1483.7,
+      "ttft_ms": 1299.5,
+      "tpot_ms": 11.39,
+      "output_tokens": 10,
+      "prompt_tokens": 879,
+      "load_ms": 61.39,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q06",
+      "style": "paraphrase",
+      "answer": "The original \"Attention Is All You Need\" paper proposed the Transformer architecture, which replaces both recurrent and convolutional networks entirely. It's based solely on attention mechanisms, which compute all pairwise token relationships in a single operation [S1]. This approach allows for significantly more parallelization compared to recurrent neural networks (RNNs), which are inherently sequential [S2].\n\nThe Transformer achieves this by using self-attention, an attention mechanism that relates different positions of a single sequence to compute a representation of the sequence. This reduces the number of operations required to relate signals from two arbitrary input or output positions to a constant number, making it easier to learn dependencies between distant positions [S2].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        2
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/11-llm-from-scratch-part-3-flash.md",
+        "docs/attention-is-all-you-need.pdf"
+      ],
+      "cites_expected": true,
+      "ms": 4131.2,
+      "ttft_ms": 2213.6,
+      "tpot_ms": 13.14,
+      "output_tokens": 138,
+      "prompt_tokens": 1390,
+      "load_ms": 59.68,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q07",
+      "style": "keyword",
+      "answer": "A task card contains:\n* Objective (the subtask query)\n* How to do it\n* Allowed tools and steps\n* Budget (searches, fetches, loops)\n* Expected output [S1]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/30-design-a-deep-research-agent-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 2456.8,
+      "ttft_ms": 1778.8,
+      "tpot_ms": 13.15,
+      "output_tokens": 44,
+      "prompt_tokens": 1093,
+      "load_ms": 66.24,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q08",
+      "style": "keyword",
+      "answer": "According to [S4], the reason for using SSE over WebSocket to stream research progress is that the client only needs to receive updates from the server, not send data continuously. The job runs as a background process and the client can check status with the job ID on another endpoint.\n\nAdditionally, [S5] states that tokens stream via server-sent events (SSE) over a POST fetch request, which is suitable for one-way streaming of research progress from the server to the client.\n\n[S1] also supports this decision by stating that SSE is used when only the server needs to push data continuously, and WebSocket is used when both sides need to send data continuously.",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        4,
+        5,
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/30-design-a-deep-research-agent-flash.md",
+        "notes/21-code-chatgpt-using-claude-code-flash.md",
+        "notes/19-design-chatgpt-training-to-serving-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3433.0,
+      "ttft_ms": 1503.5,
+      "tpot_ms": 13.7,
+      "output_tokens": 135,
+      "prompt_tokens": 913,
+      "load_ms": 60.17,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q09",
+      "style": "keyword",
+      "answer": "The Jev model is a new type of AI model called a \"system one\" model. It's designed to be fast, automatic, and effortless, unlike today's large language models (LLMs) which are considered \"system two\" models that require slow and careful thinking.\n\nJev was built by TypeSafe AI, founded by one of the people behind ChatGPT. The model is proprietary and has a unique architecture called a \"parallel sampler\", which produces all outputs in a single query [S1]. It's intended for decision-making tasks and can output type-safe structured values with a calibrated confidence score [S4].\n\nThe Jev model cannot generate text or code, but it's designed to be 40-200x faster than frontier LLMs on structured tasks, making it suitable for workflows, data processing at scale, real-time apps, and verifying LLM outputs [S1].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        4
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/30-design-a-deep-research-agent-flash.md",
+        "notes/30-design-a-deep-research-agent-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 4450.1,
+      "ttft_ms": 1785.7,
+      "tpot_ms": 14.2,
+      "output_tokens": 182,
+      "prompt_tokens": 1059,
+      "load_ms": 67.29,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q10",
+      "style": "paraphrase",
+      "answer": "To prevent old versions of a file's text from showing up in search after it's been edited, we need to delete all chunks for that document and re-chunk, re-embed, and reinsert the whole document. This is because editing a PDF shifts token boundaries, making it unreliable to patch individual chunks [S5]. \n\nHere are the steps:\n\n* Delete all chunks for that document\n* Re-parse the updated file\n* Re-chunk the updated text\n* Re-embed the new chunks\n* Reinsert the whole document into the index\n\nThis approach ensures that only the latest version of the file's text is searchable [S5].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        5
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/22-design-a-rag-system-part-1-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3790.0,
+      "ttft_ms": 1782.8,
+      "tpot_ms": 14.41,
+      "output_tokens": 133,
+      "prompt_tokens": 1017,
+      "load_ms": 72.52,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q11",
+      "style": "keyword",
+      "answer": "Session memory is disposable and per-session, used to store chat history within a single conversation thread [S2]. It's fed to the LLM on every turn and discarded when the chat ends. This means that if you start a new conversation, the previous one's history is not used.\n\nOn the other hand, persistent memory (also known as long-term memory) is durable and per-user, storing preferences and information across multiple sessions [S1]. It carries continuity across chats, but not within a single chat.",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        2,
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/25-design-memory-for-a-personal-ai-assistant-part-1-flash.md",
+        "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3186.0,
+      "ttft_ms": 1603.9,
+      "tpot_ms": 14.42,
+      "output_tokens": 104,
+      "prompt_tokens": 907,
+      "load_ms": 71.07,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q12",
+      "style": "keyword",
+      "answer": "Byte Pair Encoding builds a vocabulary by repeatedly merging the most frequent adjacent pair of symbols, starting from individual characters. This process continues until the target vocab size is reached. For example, given the sequence \"AAABDAAABAC\", it would merge pairs such as \"A+A\" to form \"AA\", then \"AA+A\" to form \"AAA\", and so on, until reaching the desired vocabulary size.\n\n[S1] [S2] [S3] [S6]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/12-llm-from-scratch-part-4-flash.md",
+        "notes/12-llm-from-scratch-part-4-flash.md",
+        "notes/10-llm-from-scratch-part-2-flash.md",
+        "notes/12-llm-from-scratch-part-4-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3656.7,
+      "ttft_ms": 2145.3,
+      "tpot_ms": 14.46,
+      "output_tokens": 99,
+      "prompt_tokens": 1191,
+      "load_ms": 71.52,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q13",
+      "style": "paraphrase",
+      "answer": "When you turn the randomness setting up, the model becomes deterministic and repetitive. It always picks the highest-probability word instead of sampling from the top candidates, which leads to varied and novel output [S1]. This means that two people asking the same question will get the same answer every time, without any variation [S2].\n\nIn other words:\n\n* Without randomness: model is deterministic and repetitive\n* With randomness: model generates varied and novel output",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        2
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/06-machine-learning-overview-flash.md",
+        "notes/01-ai-engineering-overview-part-1-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3050.1,
+      "ttft_ms": 1626.6,
+      "tpot_ms": 14.45,
+      "output_tokens": 92,
+      "prompt_tokens": 918,
+      "load_ms": 64.42,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q14",
+      "style": "keyword",
+      "answer": "Causal masking prevents positions from attending to subsequent positions during training, which would be data leakage. Without it, the model could learn to predict future tokens based on unseen information, making it useless for autoregressive tasks like language modeling [S1]. This is especially problematic because the model would learn a different function than what's required at inference time [S5].\n\nIn other words, causal masking ensures that the model can only attend to past positions when predicting a token, which aligns with the autoregressive paradigm where the model generates tokens one by one in sequence [S3][S5].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        5,
+        3
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/09-llm-from-scratch-part-1-flash.md",
+        "notes/11-llm-from-scratch-part-3-flash.md",
+        "notes/11-llm-from-scratch-part-3-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3905.2,
+      "ttft_ms": 2017.2,
+      "tpot_ms": 14.79,
+      "output_tokens": 121,
+      "prompt_tokens": 1118,
+      "load_ms": 72.97,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q15",
+      "style": "keyword",
+      "answer": "LoRA (Low-Rank Adaptation) is a technique that adapts the model without retraining all of its weights. It's motivated by the observation that the weight updates needed for a downstream task live in a low-rank subspace [S3]. LoRA is cheaper than full fine-tuning because it doesn't update every parameter, which reduces memory requirements and computation costs.\n\nIn particular, LoRA uses two matrices: `A` with small random values and `B` initialized to zero. This allows for faster adaptation and higher learning rates compared to full fine-tuning [S6].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        3,
+        6
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/13-llm-from-scratch-part-5-flash.md",
+        "notes/13-llm-from-scratch-part-5-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3390.0,
+      "ttft_ms": 1528.9,
+      "tpot_ms": 14.78,
+      "output_tokens": 121,
+      "prompt_tokens": 865,
+      "load_ms": 71.08,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q16",
+      "style": "keyword",
+      "answer": "Grouped Query Attention (GQA) organizes Q heads into groups, and each group shares one K/V head. This reduces the KV cache growth from linear with sequence length per head to a constant size, making it more efficient for inference.\n\n[G2] [S3]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        3
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/10-llm-from-scratch-part-2-flash.md"
+      ],
+      "cites_expected": false,
+      "ms": 3244.9,
+      "ttft_ms": 2311.8,
+      "tpot_ms": 14.32,
+      "output_tokens": 57,
+      "prompt_tokens": 1246,
+      "load_ms": 73.99,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q17",
+      "style": "paraphrase",
+      "answer": "To keep an agent running experiments on its own, you need to set up a loop. Loop engineering is the project setup that keeps the agent running for a long period of time, extracting the maximum from the harness [S2]. This allows the agent to run repeated experiments and find improvements.\n\nThere are two ways to solve a measurable task: open-ended and closed. In an open-ended approach, you let the model decide on the experiments and only check the final improvement [S3]. However, for this question, we're interested in the closed approach.\n\nIn a closed experiment, you use your own domain knowledge to name the exact experiments and ask the agent which one improved the metric most. This is done by replacing the word \"experiments\" with the specific thing you want done [S6].\n\nTo keep only the changes that improve a metric, you can set up a loop that terminates on the metric, not on a fixed number of attempts [S4]. The evaluation step is the check if we've reached the desired improvement yet. If not, try something else and loop again.\n\nAlternatively, you can use the `/goal` command, which internally does almost what the hand-written `CLAUDE.md` does: don't stop until the user's goal is achieved [S5]. This command displays the goal as active and keeps counting while it runs, deciding on its own whether to go multi-agent or sequential.",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        2,
+        3,
+        6,
+        4,
+        5
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/29-loop-engineering-and-graph-engineering-flash.md",
+        "notes/29-loop-engineering-and-graph-engineering-flash.md",
+        "notes/29-loop-engineering-and-graph-engineering-flash.md",
+        "notes/29-loop-engineering-and-graph-engineering-flash.md",
+        "notes/29-loop-engineering-and-graph-engineering-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 6282.1,
+      "ttft_ms": 1932.6,
+      "tpot_ms": 14.92,
+      "output_tokens": 286,
+      "prompt_tokens": 1066,
+      "load_ms": 76.47,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q18",
+      "style": "paraphrase",
+      "answer": "A helper agent avoids filling up the main agent's context window by running in its own fresh context window, making granular calls, and returning one summary result [S1]. This approach is also known as \"context independence\" [S3], where the main agent passes none of its conversation history or loaded skills to the subagent. In fact, helper agents are designed to decrease the main agent's usage by absorbing noisy intermediate steps [S4].\n\nAdditionally, using microservices can help keep the codebase within a certain limit that fits the context window, preventing the agent from failing due to context bloat [S5].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+        "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+        "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+        "notes/28-special-session-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3382.7,
+      "ttft_ms": 1450.0,
+      "tpot_ms": 14.69,
+      "output_tokens": 126,
+      "prompt_tokens": 818,
+      "load_ms": 71.08,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q19",
+      "style": "keyword",
+      "answer": "The \"lost in the middle\" problem refers to a phenomenon where Large Language Models (LLMs) tend to ignore or give low weight to content placed in the middle of a prompt. This results in high accuracy for information at the beginning and end of the prompt, but lower accuracy for information in the middle.\n\n* The model gives most weight to what is at the start and what is at the end of the prompt [S1].\n* Information in the middle gets far less preference and accuracy drops [S2].\n* Attention isn't even: the **beginning** and **end** of a prompt carry weight, the middle is often lost [S3].\n\nThis problem is more pronounced in very long context windows (100k\u2013200k tokens) [S3].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        2,
+        3
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+        "notes/24-design-a-rag-system-part-3-flash.md",
+        "notes/15-ai-coding-agent-from-scratch-part-2-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 5629.4,
+      "ttft_ms": 1930.1,
+      "tpot_ms": 23.11,
+      "output_tokens": 156,
+      "prompt_tokens": 900,
+      "load_ms": 63.48,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q20",
+      "style": "paraphrase",
+      "answer": "The paper \"Rag-Lewis-2020\" [S1] describes combining a pre-trained retriever (Dense Passage Retriever) with a pre-trained seq2seq model (BART) to generate answers to knowledge-intensive questions. This approach is referred to as Retrieval-Augmented Generation (RAG). \n\nThe paper states that RAG models achieve state-of-the-art results on open Natural Questions [29], WebQuestions [3] and CuratedTrec [2].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "docs/rag-lewis-2020.pdf"
+      ],
+      "cites_expected": true,
+      "ms": 8083.3,
+      "ttft_ms": 5568.4,
+      "tpot_ms": 23.36,
+      "output_tokens": 100,
+      "prompt_tokens": 2007,
+      "load_ms": 88.74,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q21",
+      "style": "keyword",
+      "answer": "The learning rate controls how far we move in the direction decided by the gradient. It's like deciding \"how much\" to move down the slope of the loss surface, rather than just which way to go [S1]. In other words, it determines the magnitude of the update step [S3].\n\nHere are some key points about learning rate:\n\n* Too high an $\\alpha$ makes the loss oscillate or diverge instead of converge [S3].\n* The right value comes from experimentation on the given dataset [S6].\n* It's a hyperparameter, set by the engineer before training, never updated by training [S6].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1,
+        3,
+        6
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/08-model-training-and-optimization-part-2-flash.md",
+        "notes/07-model-training-and-optimization-part-1-flash.md",
+        "notes/09-llm-from-scratch-part-1-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3825.1,
+      "ttft_ms": 2137.3,
+      "tpot_ms": 12.14,
+      "output_tokens": 130,
+      "prompt_tokens": 952,
+      "load_ms": 80.02,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q22",
+      "style": "paraphrase",
+      "answer": "A normal chatbot cannot access your file system without permission. It cannot run commands like `ls` or `pwd`, execute code, or modify local project files. You have to click download and move things manually. This is because the dividing line between a coding agent and a browser chatbot is machine access [S1].",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        1
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/29-loop-engineering-and-graph-engineering-flash.md"
+      ],
+      "cites_expected": false,
+      "ms": 2922.4,
+      "ttft_ms": 1984.3,
+      "tpot_ms": 12.69,
+      "output_tokens": 66,
+      "prompt_tokens": 1309,
+      "load_ms": 68.76,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q23",
+      "style": "paraphrase",
+      "answer": "To determine the number of GPUs needed for peak traffic, we look at [S4]. The calculation is based on aggregate token throughput (175,000 tok/s) and the number of tokens per GPU (2,000 tok/s per H100). This results in approximately 88 H100s required to serve the peak traffic.\n\n[S4]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        4
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/19-design-chatgpt-training-to-serving-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 2901.4,
+      "ttft_ms": 1922.7,
+      "tpot_ms": 12.89,
+      "output_tokens": 70,
+      "prompt_tokens": 1197,
+      "load_ms": 66.42,
+      "done_reason": "stop"
+    },
+    {
+      "id": "q24",
+      "style": "keyword",
+      "answer": "A KV cache stores previously computed Key and Value projections of tokens so they don't need to be recalculated for every new token. This avoids redundant matrix multiplications during autoregressive decoding, improving efficiency [S2]. It's used only during inference, not training [S5].\n\nKey points:\n\n* Stores K and V projections of prior tokens\n* Avoids recomputing them for every new token\n* Improves efficiency by reducing redundant matrix multiplications\n\n[S2][S5]",
+      "not_found": false,
+      "llm_refused": false,
+      "cited": [
+        2,
+        5
+      ],
+      "invalid": [],
+      "cited_docs": [
+        "notes/09-llm-from-scratch-part-1-flash.md",
+        "notes/11-llm-from-scratch-part-3-flash.md"
+      ],
+      "cites_expected": true,
+      "ms": 3183.6,
+      "ttft_ms": 1756.0,
+      "tpot_ms": 13.35,
+      "output_tokens": 100,
+      "prompt_tokens": 1087,
+      "load_ms": 64.19,
+      "done_reason": "stop"
+    },
+    {
+      "id": "u01",
+      "style": "unanswerable",
+      "answer": "I couldn't find this in your notes.",
+      "not_found": true,
+      "llm_refused": false,
+      "cited": [],
+      "invalid": [],
+      "cited_docs": [],
+      "cites_expected": null,
+      "ms": 89.9,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "output_tokens": null,
+      "prompt_tokens": null,
+      "load_ms": null,
+      "done_reason": null
+    },
+    {
+      "id": "u02",
+      "style": "unanswerable",
+      "answer": "I couldn't find this in your notes.",
+      "not_found": true,
+      "llm_refused": false,
+      "cited": [],
+      "invalid": [],
+      "cited_docs": [],
+      "cites_expected": null,
+      "ms": 95.2,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "output_tokens": null,
+      "prompt_tokens": null,
+      "load_ms": null,
+      "done_reason": null
+    },
+    {
+      "id": "u03",
+      "style": "unanswerable",
+      "answer": "I couldn't find this in your notes.",
+      "not_found": true,
+      "llm_refused": false,
+      "cited": [],
+      "invalid": [],
+      "cited_docs": [],
+      "cites_expected": null,
+      "ms": 54.3,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "output_tokens": null,
+      "prompt_tokens": null,
+      "load_ms": null,
+      "done_reason": null
+    },
+    {
+      "id": "u04",
+      "style": "unanswerable",
+      "answer": "I couldn't find this in your notes.",
+      "not_found": true,
+      "llm_refused": false,
+      "cited": [],
+      "invalid": [],
+      "cited_docs": [],
+      "cites_expected": null,
+      "ms": 73.2,
+      "ttft_ms": null,
+      "tpot_ms": null,
+      "output_tokens": null,
+      "prompt_tokens": null,
+      "load_ms": null,
+      "done_reason": null
+    }
+  ]
+}

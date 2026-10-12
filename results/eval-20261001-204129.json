@@ -1,0 +1,827 @@
+{
+  "time": "2026-10-01T20:41:29",
+  "config_hash": "edf47ee8",
+  "summary": {
+    "vector": {
+      "all": {
+        "n": 24,
+        "hit@1": 0.5,
+        "hit@5": 0.792,
+        "mrr@10": 0.602
+      },
+      "keyword": {
+        "n": 15,
+        "hit@1": 0.4,
+        "hit@5": 0.667,
+        "mrr@10": 0.5
+      },
+      "paraphrase": {
+        "n": 9,
+        "hit@1": 0.667,
+        "hit@5": 1.0,
+        "mrr@10": 0.772
+      },
+      "p50_ms": 23.7
+    },
+    "bm25": {
+      "all": {
+        "n": 24,
+        "hit@1": 0.792,
+        "hit@5": 0.917,
+        "mrr@10": 0.835
+      },
+      "keyword": {
+        "n": 15,
+        "hit@1": 0.867,
+        "hit@5": 0.933,
+        "mrr@10": 0.898
+      },
+      "paraphrase": {
+        "n": 9,
+        "hit@1": 0.667,
+        "hit@5": 0.889,
+        "mrr@10": 0.73
+      },
+      "p50_ms": 4.2
+    },
+    "hybrid": {
+      "all": {
+        "n": 24,
+        "hit@1": 0.708,
+        "hit@5": 0.875,
+        "mrr@10": 0.772
+      },
+      "keyword": {
+        "n": 15,
+        "hit@1": 0.667,
+        "hit@5": 0.867,
+        "mrr@10": 0.747
+      },
+      "paraphrase": {
+        "n": 9,
+        "hit@1": 0.778,
+        "hit@5": 0.889,
+        "mrr@10": 0.814
+      },
+      "p50_ms": 26.7
+    }
+  },
+  "per_question": [
+    {
+      "id": "q01",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.7617,
+      "ms": 79.4
+    },
+    {
+      "id": "q01",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/23-design-a-rag-system-part-2-flash.md",
+      "top_score": 25.4791,
+      "ms": 3.4
+    },
+    {
+      "id": "q01",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 2,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.0164,
+      "ms": 23.5
+    },
+    {
+      "id": "q02",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/23-design-a-rag-system-part-2-flash.md",
+      "top_score": 0.7096,
+      "ms": 21.0
+    },
+    {
+      "id": "q02",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/22-design-a-rag-system-part-1-flash.md",
+      "top_score": 10.7813,
+      "ms": 3.4
+    },
+    {
+      "id": "q02",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/23-design-a-rag-system-part-2-flash.md",
+      "top_score": 0.0164,
+      "ms": 25.8
+    },
+    {
+      "id": "q03",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/18-numbers-every-ai-engineer-should-know-flash.md",
+      "top_score": 0.7469,
+      "ms": 31.4
+    },
+    {
+      "id": "q03",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/18-numbers-every-ai-engineer-should-know-flash.md",
+      "top_score": 12.0554,
+      "ms": 6.3
+    },
+    {
+      "id": "q03",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/19-design-chatgpt-training-to-serving-flash.md",
+      "top_score": 0.0313,
+      "ms": 26.6
+    },
+    {
+      "id": "q04",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 2,
+      "top_doc": "notes/19-design-chatgpt-training-to-serving-flash.md",
+      "top_score": 0.8214,
+      "ms": 19.6
+    },
+    {
+      "id": "q04",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/18-numbers-every-ai-engineer-should-know-flash.md",
+      "top_score": 27.9217,
+      "ms": 6.1
+    },
+    {
+      "id": "q04",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/18-numbers-every-ai-engineer-should-know-flash.md",
+      "top_score": 0.0313,
+      "ms": 24.2
+    },
+    {
+      "id": "q05",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.7579,
+      "ms": 20.3
+    },
+    {
+      "id": "q05",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 7,
+      "top_doc": "notes/28-special-session-flash.md",
+      "top_score": 11.6506,
+      "ms": 4.2
+    },
+    {
+      "id": "q05",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": null,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.0295,
+      "ms": 23.1
+    },
+    {
+      "id": "q06",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.6959,
+      "ms": 24.2
+    },
+    {
+      "id": "q06",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 15.2768,
+      "ms": 5.2
+    },
+    {
+      "id": "q06",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.0325,
+      "ms": 22.6
+    },
+    {
+      "id": "q07",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 0.8704,
+      "ms": 26.1
+    },
+    {
+      "id": "q07",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 29.6921,
+      "ms": 4.2
+    },
+    {
+      "id": "q07",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 0.0328,
+      "ms": 26.8
+    },
+    {
+      "id": "q08",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+      "top_score": 0.7264,
+      "ms": 25.7
+    },
+    {
+      "id": "q08",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 28.7368,
+      "ms": 4.6
+    },
+    {
+      "id": "q08",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 0.0289,
+      "ms": 23.9
+    },
+    {
+      "id": "q09",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/21-code-chatgpt-using-claude-code-flash.md",
+      "top_score": 0.7008,
+      "ms": 27.6
+    },
+    {
+      "id": "q09",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 11.0448,
+      "ms": 4.1
+    },
+    {
+      "id": "q09",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 3,
+      "top_doc": "notes/01-ai-engineering-overview-part-1-flash.md",
+      "top_score": 0.0277,
+      "ms": 31.8
+    },
+    {
+      "id": "q10",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/22-design-a-rag-system-part-1-flash.md",
+      "top_score": 0.6888,
+      "ms": 19.8
+    },
+    {
+      "id": "q10",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 5,
+      "top_doc": "notes/15-ai-coding-agent-from-scratch-part-2-flash.md",
+      "top_score": 18.5616,
+      "ms": 4.2
+    },
+    {
+      "id": "q10",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/23-design-a-rag-system-part-2-flash.md",
+      "top_score": 0.0296,
+      "ms": 35.3
+    },
+    {
+      "id": "q11",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 2,
+      "top_doc": "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+      "top_score": 0.7493,
+      "ms": 28.4
+    },
+    {
+      "id": "q11",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/25-design-memory-for-a-personal-ai-assistant-part-1-flash.md",
+      "top_score": 12.6316,
+      "ms": 3.1
+    },
+    {
+      "id": "q11",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/25-design-memory-for-a-personal-ai-assistant-part-1-flash.md",
+      "top_score": 0.0323,
+      "ms": 24.1
+    },
+    {
+      "id": "q12",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/12-llm-from-scratch-part-4-flash.md",
+      "top_score": 0.7502,
+      "ms": 32.6
+    },
+    {
+      "id": "q12",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/12-llm-from-scratch-part-4-flash.md",
+      "top_score": 18.5054,
+      "ms": 4.1
+    },
+    {
+      "id": "q12",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/12-llm-from-scratch-part-4-flash.md",
+      "top_score": 0.0311,
+      "ms": 31.0
+    },
+    {
+      "id": "q13",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 5,
+      "top_doc": "notes/01-ai-engineering-overview-part-1-flash.md",
+      "top_score": 0.7281,
+      "ms": 19.1
+    },
+    {
+      "id": "q13",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 6,
+      "top_doc": "notes/06-machine-learning-overview-flash.md",
+      "top_score": 12.9443,
+      "ms": 5.0
+    },
+    {
+      "id": "q13",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 8,
+      "top_doc": "notes/06-machine-learning-overview-flash.md",
+      "top_score": 0.032,
+      "ms": 26.7
+    },
+    {
+      "id": "q14",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.736,
+      "ms": 22.1
+    },
+    {
+      "id": "q14",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 17.1031,
+      "ms": 3.9
+    },
+    {
+      "id": "q14",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.0328,
+      "ms": 27.4
+    },
+    {
+      "id": "q15",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.7918,
+      "ms": 38.1
+    },
+    {
+      "id": "q15",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 20.2496,
+      "ms": 2.8
+    },
+    {
+      "id": "q15",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/02-ai-engineering-overview-part-2-flash.md",
+      "top_score": 0.0287,
+      "ms": 26.7
+    },
+    {
+      "id": "q16",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 4,
+      "top_doc": "docs/attention-is-all-you-need.pdf",
+      "top_score": 0.7153,
+      "ms": 19.4
+    },
+    {
+      "id": "q16",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/13-llm-from-scratch-part-5-flash.md",
+      "top_score": 21.715,
+      "ms": 4.5
+    },
+    {
+      "id": "q16",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/13-llm-from-scratch-part-5-flash.md",
+      "top_score": 0.0301,
+      "ms": 23.2
+    },
+    {
+      "id": "q17",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/29-loop-engineering-and-graph-engineering-flash.md",
+      "top_score": 0.7211,
+      "ms": 19.9
+    },
+    {
+      "id": "q17",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/29-loop-engineering-and-graph-engineering-flash.md",
+      "top_score": 23.3943,
+      "ms": 4.6
+    },
+    {
+      "id": "q17",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/29-loop-engineering-and-graph-engineering-flash.md",
+      "top_score": 0.0323,
+      "ms": 27.1
+    },
+    {
+      "id": "q18",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+      "top_score": 0.7254,
+      "ms": 21.0
+    },
+    {
+      "id": "q18",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+      "top_score": 17.5453,
+      "ms": 3.9
+    },
+    {
+      "id": "q18",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+      "top_score": 0.0325,
+      "ms": 28.3
+    },
+    {
+      "id": "q19",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+      "top_score": 0.6569,
+      "ms": 23.3
+    },
+    {
+      "id": "q19",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/15-ai-coding-agent-from-scratch-part-2-flash.md",
+      "top_score": 15.9063,
+      "ms": 3.4
+    },
+    {
+      "id": "q19",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 6,
+      "top_doc": "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+      "top_score": 0.0325,
+      "ms": 27.7
+    },
+    {
+      "id": "q20",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "docs/rag-lewis-2020.pdf",
+      "top_score": 0.7477,
+      "ms": 28.0
+    },
+    {
+      "id": "q20",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "docs/rag-lewis-2020.pdf",
+      "top_score": 17.8052,
+      "ms": 5.1
+    },
+    {
+      "id": "q20",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "docs/rag-lewis-2020.pdf",
+      "top_score": 0.0323,
+      "ms": 32.1
+    },
+    {
+      "id": "q21",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 1,
+      "top_doc": "notes/08-model-training-and-optimization-part-2-flash.md",
+      "top_score": 0.7942,
+      "ms": 24.3
+    },
+    {
+      "id": "q21",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/07-model-training-and-optimization-part-1-flash.md",
+      "top_score": 19.5298,
+      "ms": 3.8
+    },
+    {
+      "id": "q21",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/08-model-training-and-optimization-part-2-flash.md",
+      "top_score": 0.0323,
+      "ms": 26.6
+    },
+    {
+      "id": "q22",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 4,
+      "top_doc": "notes/12-llm-from-scratch-part-4-flash.md",
+      "top_score": 0.7105,
+      "ms": 21.3
+    },
+    {
+      "id": "q22",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 5,
+      "top_doc": "notes/29-loop-engineering-and-graph-engineering-flash.md",
+      "top_score": 16.975,
+      "ms": 5.2
+    },
+    {
+      "id": "q22",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 5,
+      "top_doc": "notes/12-llm-from-scratch-part-4-flash.md",
+      "top_score": 0.0325,
+      "ms": 25.9
+    },
+    {
+      "id": "q23",
+      "style": "paraphrase",
+      "mode": "vector",
+      "rank": 2,
+      "top_doc": "notes/28-special-session-flash.md",
+      "top_score": 0.6792,
+      "ms": 23.0
+    },
+    {
+      "id": "q23",
+      "style": "paraphrase",
+      "mode": "bm25",
+      "rank": 1,
+      "top_doc": "notes/19-design-chatgpt-training-to-serving-flash.md",
+      "top_score": 21.0224,
+      "ms": 5.3
+    },
+    {
+      "id": "q23",
+      "style": "paraphrase",
+      "mode": "hybrid",
+      "rank": 1,
+      "top_doc": "notes/19-design-chatgpt-training-to-serving-flash.md",
+      "top_score": 0.0313,
+      "ms": 26.1
+    },
+    {
+      "id": "q24",
+      "style": "keyword",
+      "mode": "vector",
+      "rank": 4,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.8025,
+      "ms": 21.0
+    },
+    {
+      "id": "q24",
+      "style": "keyword",
+      "mode": "bm25",
+      "rank": 3,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 14.6315,
+      "ms": 5.9
+    },
+    {
+      "id": "q24",
+      "style": "keyword",
+      "mode": "hybrid",
+      "rank": 5,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.0328,
+      "ms": 25.9
+    },
+    {
+      "id": "u01",
+      "style": "unanswerable",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/30-design-a-deep-research-agent-flash.md",
+      "top_score": 0.583,
+      "ms": 22.2
+    },
+    {
+      "id": "u01",
+      "style": "unanswerable",
+      "mode": "bm25",
+      "rank": null,
+      "top_doc": "notes/16-ai-coding-agent-from-scratch-part-3-flash.md",
+      "top_score": 14.4591,
+      "ms": 4.8
+    },
+    {
+      "id": "u01",
+      "style": "unanswerable",
+      "mode": "hybrid",
+      "rank": null,
+      "top_doc": "notes/26-design-memory-for-a-personal-ai-assistant-part-2-flash.md",
+      "top_score": 0.0289,
+      "ms": 28.8
+    },
+    {
+      "id": "u02",
+      "style": "unanswerable",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/23-design-a-rag-system-part-2-flash.md",
+      "top_score": 0.5876,
+      "ms": 23.7
+    },
+    {
+      "id": "u02",
+      "style": "unanswerable",
+      "mode": "bm25",
+      "rank": null,
+      "top_doc": "notes/01-ai-engineering-overview-part-1-flash.md",
+      "top_score": 11.0476,
+      "ms": 4.3
+    },
+    {
+      "id": "u02",
+      "style": "unanswerable",
+      "mode": "hybrid",
+      "rank": null,
+      "top_doc": "notes/14-ai-coding-agent-from-scratch-part-1-flash.md",
+      "top_score": 0.032,
+      "ms": 27.6
+    },
+    {
+      "id": "u03",
+      "style": "unanswerable",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.6025,
+      "ms": 27.0
+    },
+    {
+      "id": "u03",
+      "style": "unanswerable",
+      "mode": "bm25",
+      "rank": null,
+      "top_doc": "notes/21-code-chatgpt-using-claude-code-flash.md",
+      "top_score": 8.8606,
+      "ms": 3.3
+    },
+    {
+      "id": "u03",
+      "style": "unanswerable",
+      "mode": "hybrid",
+      "rank": null,
+      "top_doc": "notes/11-llm-from-scratch-part-3-flash.md",
+      "top_score": 0.0164,
+      "ms": 26.7
+    },
+    {
+      "id": "u04",
+      "style": "unanswerable",
+      "mode": "vector",
+      "rank": null,
+      "top_doc": "notes/06-machine-learning-overview-flash.md",
+      "top_score": 0.6712,
+      "ms": 25.2
+    },
+    {
+      "id": "u04",
+      "style": "unanswerable",
+      "mode": "bm25",
+      "rank": null,
+      "top_doc": "notes/22-design-a-rag-system-part-1-flash.md",
+      "top_score": 8.6974,
+      "ms": 3.5
+    },
+    {
+      "id": "u04",
+      "style": "unanswerable",
+      "mode": "hybrid",
+      "rank": null,
+      "top_doc": "notes/06-machine-learning-overview-flash.md",
+      "top_score": 0.0303,
+      "ms": 31.6
+    }
+  ]
+}
